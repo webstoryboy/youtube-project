@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Today from './pages/Today'
+import Traveler from './pages/Traveler'
+import Channel from './pages/Channel'
+import Header from './components/section/Header'
+import Footer from './components/section/Footer'
+import Main from './components/section/Main'
+import Search from './pages/Search'
+import Video from './pages/Video'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Header />
+      <Main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/today" element={<Today />} />
+          <Route path="/traveler" element={<Traveler />} />
+          <Route path="/channel/:channelId" element={<Channel />} />
+          <Route path="/search/:searchId" element={<Search />} />
+          <Route path="/video/:videoId" element={<Video />} />
+        </Routes>
+      </Main>
+      <Footer />
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
