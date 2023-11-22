@@ -36,8 +36,18 @@
 }
 
 @media (max-width: 800px) {
+    #root {
+        padding-top: 100px;
+    }
+
     #header {
         left: -260px;
+    }
+
+    #header.show {
+        left: 0;
+        background-color: var(--white);
+        top: 85px;
     }
 
     #main {

@@ -71,6 +71,9 @@ export const keywordText = [
     }, {
         title: "브루스리 TV",
         src: "/search/브루스리TV"
+    }, {
+        title: "뉴진스",
+        src: "/search/뉴진스"
     }
 ]
 

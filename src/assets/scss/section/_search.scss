@@ -16,3 +16,18 @@
         color: var(--black);
     }
 }
+
+@media (max-width: 800px) {
+    .search__inner {
+        padding-left: 240px;
+    }
+
+    #search {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: var(--white);
+        z-index: 1000;
+    }
+}
