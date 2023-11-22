@@ -4,16 +4,22 @@
     margin-bottom: 40px;
 
     .today__thumb {
-        width: 40%;
-        // background-image: url(https://i.ytimg.com/vi/hycAQLE2Xq0/hqdefault.jpg);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-color: #ccc;
+        width: 600px;
+
+        a {
+            display: block;
+            cursor: pointer;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
     }
 
     .today__text {
-        width: 60%;
+        width: calc(100% - 600px);
         height: 310px;
         padding: 2rem;
         position: relative;
@@ -24,15 +30,18 @@
             padding: 1px 30px;
             display: inline-block;
             border-radius: 40px;
+            margin-bottom: 10px;
         }
 
         .title {
-            line-height: 2;
+            line-height: 1.4;
             font-size: 1.5rem;
+            margin-bottom: 10px;
         }
 
         .desc {
-            color: var(--black300)
+            color: var(--black300);
+            @include line(3);
         }
 
         .info {
@@ -52,4 +61,62 @@
             }
         }
     }
+
+    @media (max-width: 1400px) {
+        .today__thumb {
+            width: 400px;
+        }
+
+        .today__text {
+            width: calc(100% - 400px);
+            height: auto;
+
+            .desc {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: 1200px) {
+
+
+        .today__thumb {
+            width: 330px;
+        }
+
+        .today__text {
+            width: calc(100% - 330px);
+
+            .title {
+                @include line(1)
+            }
+
+            .info {
+                display: none;
+            }
+        }
+    }
+
+
+}
+
+@media (max-width: 600px) {
+    .today__inner {
+        flex-direction: column;
+
+        .today__thumb {
+            width: 100%;
+        }
+
+        .today__text {
+            width: 100%;
+            padding: 1rem;
+
+            .desc {
+                display: block;
+            }
+        }
+    }
+
+
 }

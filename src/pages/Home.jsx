@@ -51,7 +51,6 @@ const Home = () => {
         >
             <Today />
             <Traveler />
-
             <VideoSlider videos={channelVideo} title='😘 조튜브 최신 영상' name='v1' />
             <VideoSlider videos={channelVideo2} title='😘 곽튜브 최신 영상' name='v2' />
             <VideoSlider videos={channelVideo3} title='😘 체코제 최신 영상' name='v3' />
